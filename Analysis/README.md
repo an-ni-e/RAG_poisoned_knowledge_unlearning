@@ -1,5 +1,5 @@
 # Further Analysis, Tests and Figures
-This notebook re-analyses the results already produced from the previous notebook (it does not call the language model, so it runs in seconds, with or without a GPU). 
+This notebook re-analyses the results already produced from the main notebook (it does not call the language model, so it runs in seconds, with or without a GPU). 
 
 It adds what the first notebook lacked:
 
