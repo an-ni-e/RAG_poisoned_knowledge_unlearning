@@ -1,4 +1,5 @@
 # Main Results (final labels, with uncertainty)
+{
 COL = {"asr": "#D55E00", "tgt": "#0072B2", "ctl": "#009E73"} 
 
 def fig_main(frames, version, path=f"{FIGS}/fig1_main_results.png"):
