@@ -1,5 +1,4 @@
 # RAG_poisoned_knowledge_unlearning
-Machine Unlearning Evaluation in RAG Systems
 
 ## Project Overview
 
