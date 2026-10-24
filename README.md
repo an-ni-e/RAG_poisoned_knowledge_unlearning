@@ -51,11 +51,14 @@ Corrected ("strict") labels. Counts are out of 30 targeted and 20 control querie
 ## Repository
 
 ```
-├── RAG_Poisoned_Knowledge_Unlearning.ipynb   main experiment (GPU)
-├── RAG_Poisoned_Knowledge_Analysis.ipynb     tests, label audit, uncertainty, figures (no GPU)
-├── data/                                     documents, queries, forget-set store
-├── results/                                  per-condition answers, metrics, audits
-└── figures/                                  result figures
+├── Main/
+│   ├── RAG_Poisoned_Knowledge_Unlearning.ipynb   experiment (GPU)
+│   └── README.md
+├── Analysis/
+│   ├── RAG_Poisoned_Knowledge_Analysis.ipynb     tests, label audit, figures (no GPU)
+│   ├── AI.md
+│   └── README.md
+└── README.md
 ```
 
 ## Usage
