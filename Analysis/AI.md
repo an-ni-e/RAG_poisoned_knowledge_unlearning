@@ -1,0 +1,15 @@
+# AI Assisted Coding Log: 
+## What was reviewed, tested and changed
+
+| # | Issue found in the original notebook | Evidence | Change | How it was tested |
+|---|---|---|---|---|
+| 1 | `ABSTAIN_RE`, `wilson` and `first_poison_rank` were each defined twice, and `ABSTAIN_RE` changed between runs | Cells 8, 11, 13 | One shared definition of each (`wilson` clamped to [0, 1]); the abstention flag is not used for any reported metric | Unit tests on `wilson` (0/10, 5/10, 30/30, containment) |
+| 2 | Labels such as 'of 12' and 'Labels on the 12 affected queries' were typed in and went stale after the label correction | Cells 14, 15 | Denominators computed from the data (`build_metrics`) | Toy dataset with hand-computed expected values, including a changed denominator |
+| 3 | Label corrections were hard-coded and untracked | Cell 20 | A `CORRECTIONS` table with reasons; `label_auto` is never overwritten; saved to `results/label_corrections.csv` | Unit test: only listed CONFLICT rows change, only to CORRECT, `label_auto` preserved |
+| 4 | The classifier can count digits in references such as '[2]' or 'document 2' as claims | Regexes like `\b2\b` (F10) | `normalise_answer` plus a robustness cell reporting how many saved labels would change | Unit tests showing the false CONFLICT without, and the correct label with, normalisation |
+| 5 | The affected set came from the original labels and was saved once | Cell 13 | Recomputed from the chosen label version every time | Toy dataset; sensitivity table across the three label versions |
+| 6 | No integrity checks on saved results | | `run_integrity_checks`: row counts and order, labels recomputed from answers, trigger flags vs similarity, threshold rule, removal equals clean | Run on real results; run on deliberately corrupted mock data to confirm the checks FAIL |
+| 7 | The main figure used the original labels and showed no uncertainty | Cell 16 | Figure 1 with the final labels and 95% Wilson whiskers | Rendered and inspected on mock data (layout only; mock data are not results) |
+| 8 | Clustered queries: 30 targeted queries come from only 10 facts | Design | Fact-level bootstrap table next to Wilson intervals, with a warning about collapse near 0 and 1 | Unit test: degenerate and deterministic cases |
+| 9 | Figures for the per-fact pattern and the threshold margin were missing | | Figures 2 and 3 | Rendered and inspected on mock data; assertions that no cell is missing |
+| 10 | Seeds: only `random` and `numpy` were seeded; generation flags produce warnings; answers capped at 60 tokens may truncate | Cells 1, 7 | **Not run:** patches below | The integrity cell prints a truncation heuristic for saved answers |
