@@ -1,0 +1,31 @@
+# Main Results (final labels, with uncertainty)
+COL = {"asr": "#D55E00", "tgt": "#0072B2", "ctl": "#009E73"} 
+
+def fig_main(frames, version, path=f"{FIGS}/fig1_main_results.png"):
+    order = [("clean", "Clean"), ("poisoned", "Poisoned"), ("removal", "Removal"),
+             ("unlearn_refusal", "U-refusal"), ("unlearn_quarantine", "U-quarantine")]
+    def kn_asr(d): tg = d[d.query_type == "targeted"]; return int(tg.label_final.isin(POISON_LABELS).sum()), len(tg)
+    def kn_tgt(d): tg = d[d.query_type == "targeted"]; return int((tg.label_final == "CORRECT").sum()), len(tg)
+    def kn_ctl(d): ct = d[d.query_type != "targeted"]; return int((ct.label_final == "CORRECT").sum()), len(ct)
+    series = [("Poison claim in answer (ASR-any)", COL["asr"], kn_asr),
+              ("Targeted answered correctly", COL["tgt"], kn_tgt),
+              ("Controls answered correctly", COL["ctl"], kn_ctl)]
+    fig, ax = plt.subplots(figsize=(10.5, 5.6))
+    w = 0.26
+    for j, (lab, colr, fn) in enumerate(series):
+        for i, (key, _) in enumerate(order):
+            k, n = fn(frames[key]); lo, hi = wilson(k, n); p = 100 * k / n
+            x = i + (j - 1) * w
+            ax.bar(x, p, w * 0.92, color=colr, label=lab if i == 0 else None)
+            ax.errorbar(x, p, yerr=[[p - 100 * lo], [100 * hi - p]], color="black", capsize=2, lw=0.8)
+            ax.text(x, 100 * hi + 1.5, f"{k}/{n}", ha="center", va="bottom", fontsize=7)
+    ax.set_xticks(range(len(order))); ax.set_xticklabels([o[1] for o in order])
+    ax.set_ylim(0, 122); ax.set_yticks(range(0, 101, 20)); ax.set_ylabel("% of queries")
+    ax.set_title(f"Poisoning and unlearning conditions (Qwen2.5-3B, greedy decoding; labels: {version})")
+    ax.legend(loc="upper center", ncol=3, frameon=False, fontsize=8, bbox_to_anchor=(0.5, 1.0))
+    ax.spines[["top", "right"]].set_visible(False)
+    fig.text(0.01, 0.005, "Whiskers: 95% Wilson intervals over queries (targeted n=30, controls n=20). Queries repeat 10 facts, so intervals are descriptive, not significance tests.", fontsize=7)
+    fig.tight_layout(rect=(0, 0.02, 1, 1)); fig.savefig(path, dpi=200); plt.show()
+    return path
+
+fig_main({n: FRAMES[n] for n in MAIN}, LABEL_VERSION)
