@@ -1,7 +1,7 @@
 # Further Analysis, Tests and Figures
 This notebook re-analyses the results already produced from the main notebook (it does not call the language model, so it runs in seconds, with or without a GPU). 
 
-It adds what the first notebook lacked:
+It adds what the main notebook lacked:
 
 1. one shared set of helper functions (no duplicate definitions)
 2. unit tests and data-integrity checks, so every number is verified before it is reported
