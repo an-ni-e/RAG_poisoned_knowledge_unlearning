@@ -19,7 +19,7 @@ It adds what the main notebook lacked:
 
 Use the same Colab session as the original notebook (the `data/` and `results/` folders must exist), or upload the outputs zip from the main notebook, unzip it, and run all cells top to bottom.
 
-Note: the first code cell runs `!unzip rag_unlearning_outputs_v2.zip`. Change the filename if your zip is named differently (e.g. `rag_unlearning_outputs.zip`), or delete the cell if the folders already exist.
+Note: the first code cell runs `!unzip rag_unlearning_outputs.zip`. 
 
 **Required inputs**
 
