@@ -1,0 +1,12 @@
+,clean,poisoned,removal,unlearn_refusal,unlearn_quarantine
+1 Poisoned retrieval (of 30),0.0,30.0,0.0,30.0,30.0
+"2 ASR, poison only (of 30)",0.0,6.0,0.0,16.0,4.0
+"2 ASR-any, incl. conflict (of 30)",0.0,12.0,0.0,18.0,6.0
+3 Unlearning success on affected (of 12),12.0,0.0,12.0,1.0,6.0
+   ...of which now CORRECT,12.0,0.0,12.0,0.0,6.0
+   ...of which now OTHER (refusal etc.),0.0,0.0,0.0,1.0,0.0
+  Targeted answered CORRECT (of 30),30.0,18.0,30.0,1.0,24.0
+  Targeted refused/OTHER (of 30),0.0,0.0,0.0,11.0,0.0
+4 Control accuracy (of 20),20.0,20.0,20.0,19.0,20.0
+5 Collateral damage (of 20),0.0,0.0,0.0,1.0,0.0
+6 Control accuracy change vs clean (pp),0.0,0.0,0.0,-5.0,0.0

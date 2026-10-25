@@ -1,0 +1,16 @@
+condition,measure,k_of_n,estimate,wilson,fact_bootstrap
+clean,ASR-any,0/30,0.0,0.00-0.11,0.00-0.00
+clean,Targeted correct,30/30,1.0,0.89-1.00,1.00-1.00
+clean,Controls correct,20/20,1.0,0.84-1.00,1.00-1.00
+poisoned,ASR-any,10/30,0.333,0.19-0.51,0.17-0.50
+poisoned,Targeted correct,20/30,0.667,0.49-0.81,0.50-0.83
+poisoned,Controls correct,20/20,1.0,0.84-1.00,1.00-1.00
+removal,ASR-any,0/30,0.0,0.00-0.11,0.00-0.00
+removal,Targeted correct,30/30,1.0,0.89-1.00,1.00-1.00
+removal,Controls correct,20/20,1.0,0.84-1.00,1.00-1.00
+unlearn_refusal,ASR-any,17/30,0.567,0.39-0.73,0.37-0.73
+unlearn_refusal,Targeted correct,2/30,0.067,0.02-0.21,0.00-0.17
+unlearn_refusal,Controls correct,19/20,0.95,0.76-0.99,0.85-1.00
+unlearn_quarantine,ASR-any,5/30,0.167,0.07-0.34,0.03-0.30
+unlearn_quarantine,Targeted correct,25/30,0.833,0.66-0.93,0.70-0.97
+unlearn_quarantine,Controls correct,20/20,1.0,0.84-1.00,1.00-1.00

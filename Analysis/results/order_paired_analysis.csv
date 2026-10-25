@@ -1,0 +1,9 @@
+,auto,strict,strict+borderline
+n_queries,30,30,30
+claim_when_last,19,18,16
+claim_when_first,5,4,4
+both,4,3,3
+last_only,15,15,13
+first_only,1,1,1
+neither,10,11,13
+exact_p,0.0005,0.0005,0.0018

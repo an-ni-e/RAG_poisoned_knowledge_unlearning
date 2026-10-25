@@ -1,0 +1,14 @@
+,clean,poisoned,removal,unlearn_refusal,unlearn_quarantine
+Poisoned documents retrieved (of 30),0.0,30.0,0.0,30.0,30.0
+"ASR, poison claim only (of 30)",0.0,6.0,0.0,16.0,4.0
+"ASR-any, incl. conflict (of 30)",0.0,10.0,0.0,17.0,5.0
+Targeted CORRECT (of 30),30.0,20.0,30.0,2.0,25.0
+Targeted refused/OTHER (of 30),0.0,0.0,0.0,11.0,0.0
+Affected queries where unlearning triggered (of 10),0.0,0.0,0.0,9.0,9.0
+Affected: no longer show poison (of 10),10.0,0.0,10.0,0.0,5.0
+   ...of which now CORRECT,10.0,0.0,10.0,0.0,5.0
+   ...of which now OTHER (refusal),0.0,0.0,0.0,0.0,0.0
+Regressed: previously-correct targeted (of 20),0.0,0.0,0.0,18.0,0.0
+Controls CORRECT (of 20),20.0,20.0,20.0,19.0,20.0
+Collateral damage (of 20),0.0,0.0,0.0,1.0,0.0
+Control accuracy change vs clean (pp),0.0,0.0,0.0,-5.0,0.0

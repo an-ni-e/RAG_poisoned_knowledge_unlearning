@@ -1,0 +1,7 @@
+,auto,strict,strict+borderline
+Poisoned baseline ASR-any (of 30),12,10,10
+Affected set (queries / facts),12 / 8,10 / 6,10 / 6
+U-quarantine: no longer show poison,6 of 12,5 of 10,5 of 10
+U-refusal: no longer show poison,1 of 12,0 of 10,0 of 10
+U-refusal: regressed,17/18,18/20,18/20
+U-quarantine: regressed,0/18,0/20,0/20

@@ -1,0 +1,20 @@
+{
+  "tau": 0.724,
+  "rule": "separable: midpoint of a and b",
+  "a": 0.7425748109817505,
+  "b": 0.7063650488853455,
+  "affected_query_ids": [
+    "Q-F01-direct",
+    "Q-F01-paraphrase_2",
+    "Q-F02-paraphrase_1",
+    "Q-F02-paraphrase_2",
+    "Q-F03-paraphrase_1",
+    "Q-F04-paraphrase_1",
+    "Q-F04-paraphrase_2",
+    "Q-F05-paraphrase_1",
+    "Q-F05-paraphrase_2",
+    "Q-F06-paraphrase_1",
+    "Q-F07-paraphrase_1",
+    "Q-F09-paraphrase_1"
+  ]
+}
