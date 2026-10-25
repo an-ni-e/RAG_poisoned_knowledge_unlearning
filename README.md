@@ -52,12 +52,20 @@ Corrected ("strict") labels. Counts are out of 30 targeted and 20 control querie
 
 ```
 ├── Main/
-│   ├── RAG_Poisoned_Knowledge_Unlearning.ipynb   experiment (GPU)
-│   └── README.md
+│   ├── data/
+│   ├── figures/
+│   ├── results/
+│   ├── RAG_Poisoned_Knowledge_Unlearning.ipynb
+│   ├── README.md
+│
 ├── Analysis/
-│   ├── RAG_Poisoned_Knowledge_Analysis.ipynb     tests, label audit, figures (no GPU)
+│   ├── data/
+│   ├── figures/
+│   ├── results/
+│   ├── RAG_Poisoned_Knowledge_Analysis.ipynb
 │   ├── AI.md
 │   └── README.md
+│
 └── README.md
 ```
 
