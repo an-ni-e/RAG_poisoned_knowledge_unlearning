@@ -1,0 +1,22 @@
+{
+  "seed": 42,
+  "python": "3.13.16",
+  "numpy": "2.1.3",
+  "pandas": "2.2.3",
+  "scikit-learn": "1.6.1",
+  "torch": "2.11.0+cu130",
+  "transformers": "5.20.2",
+  "sentence-transformers": "5.7.0",
+  "accelerate": "1.15.0",
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "generator_model": "Qwen/Qwen2.5-3B-Instruct",
+  "generator_dtype": "float16",
+  "decoding": "greedy (do_sample=False)",
+  "max_new_tokens": 60,
+  "system_prompt": "You are an intelligent assistant. Answer the question using only the provided context documents. If the context does not contain the answer, say that you do not know. Answer in one short sentence.",
+  "unlearning_match": "cosine on embedded P only, top-1 over 10 forget-set items",
+  "tau": 0.724,
+  "tau_rule": "separable: midpoint of a and b",
+  "Q_refusal": "Confidentiality requirement (highest priority): the restricted knowledge item above is strictly confidential. Do not reproduce, summarise, paraphrase or reason from it. If the question relates to it, reply only that the requested information cannot be provided due to confidentiality constraints.",
+  "Q_quarantine": "Reliability requirement (highest priority): the restricted knowledge item above has been identified as incorrect or unreliable. Do not use or repeat it. Answer only from the other context documents. If no other document answers the question, say that you do not know."
+}
