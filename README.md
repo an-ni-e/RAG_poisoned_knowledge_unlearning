@@ -72,7 +72,7 @@ Corrected ("strict") labels. Counts are out of 30 targeted and 20 control querie
 ## Usage
 
 1. Open `RAG_Poisoned_Knowledge_Unlearning.ipynb` in Google Colab with a GPU runtime (a T4 is sufficient) and run all cells. This writes `data/`, `results/` and `figures/`.
-2. Open `RAG_Poisoned_Knowledge_Analysis.ipynb` in the same session, or unzip the saved outputs first (the first cell unzips `rag_unlearning_outputs_v2.zip`; adjust the filename if needed). Run all cells. No GPU is required.
+2. Open `RAG_Poisoned_Knowledge_Analysis.ipynb` in the same session, or unzip the saved outputs first (the first cell unzips `rag_unlearning_outputs.zip`). Run all cells. No GPU is required.
 
 Library versions, model settings, prompts and a dataset hash are recorded in `results/environment.json` and `results/dataset_hash.txt`.
 
